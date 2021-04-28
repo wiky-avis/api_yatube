@@ -1,17 +1,10 @@
-from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
-from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Comment, Post
 from .permissions import IsOwnerOrReadOnly
 from .serializers import CommentSerializer, PostSerializer
-
-User = get_user_model()
-
-for user in User.objects.all():
-    Token.objects.get_or_create(user=user)
 
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -25,7 +18,7 @@ class PostViewSet(viewsets.ModelViewSet):
 
 class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
-    queryset = Comment.objects.all()
+    queryset = Comment.objects.all()  # без этого параметра, ниче не работает
     permission_classes = [IsOwnerOrReadOnly, IsAuthenticatedOrReadOnly]
 
     def perform_create(self, serializer):
