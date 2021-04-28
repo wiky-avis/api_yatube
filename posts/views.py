@@ -18,7 +18,6 @@ class PostViewSet(viewsets.ModelViewSet):
 
 class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
-    queryset = Comment.objects.all()  # без этого параметра, ниче не работает
     permission_classes = [IsOwnerOrReadOnly, IsAuthenticatedOrReadOnly]
 
     def perform_create(self, serializer):
