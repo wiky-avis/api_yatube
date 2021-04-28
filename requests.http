@@ -36,7 +36,7 @@ Authorization: Token f118d69925e9fdbbf5caacdf0b7c08487741e0df
 
 ###
 
-GET http://localhost:8000/api/v1/posts/5/comments/3/
+GET http://localhost:8000/api/v1/posts/5/comments/
 
 ###
 
@@ -62,7 +62,7 @@ Authorization: Token f118d69925e9fdbbf5caacdf0b7c08487741e0df
 
 ###
 
-DELETE http://localhost:8000/api/v1/posts/5/comments/1/
+DELETE http://localhost:8000/api/v1/posts/5/comments/3/
 Content-Type: application/json
 Authorization: Token f118d69925e9fdbbf5caacdf0b7c08487741e0df
 
