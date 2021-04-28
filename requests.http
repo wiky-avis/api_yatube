@@ -1,0 +1,62 @@
+POST http://localhost:8000/api/v1/api-token-auth/
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+###
+
+GET http://localhost:8000/api/v1/posts/
+
+###
+
+GET http://localhost:8000/api/v1/posts/1/
+
+###
+
+POST http://localhost:8000/api/v1/posts/
+Content-Type: application/json
+Authorization: Token f118d69925e9fdbbf5caacdf0b7c08487741e0df
+
+{
+    "text": "Тескт поста 00"
+}
+
+###
+
+PUT http://localhost:8000/api/v1/posts/5/
+Content-Type: application/json
+Authorization: Token f118d69925e9fdbbf5caacdf0b7c08487741e0df
+
+{
+    "text": "Тескт поста 001"
+}
+
+###
+
+GET http://localhost:8000/api/v1/posts/5/comments/
+
+###
+
+POST http://localhost:8000/api/v1/posts/5/comments/
+Content-Type: application/json
+Authorization: Token f118d69925e9fdbbf5caacdf0b7c08487741e0df
+
+{
+    "text": "Отличный пост!",
+    "post": 5
+}
+
+###
+
+DELETE http://localhost:8000/api/v1/posts/5/comments/1/
+Content-Type: application/json
+Authorization: Token f118d69925e9fdbbf5caacdf0b7c08487741e0df
+
+###
+
+DELETE http://localhost:8000/api/v1/posts/5/
+Content-Type: application/json
+Authorization: Token f118d69925e9fdbbf5caacdf0b7c08487741e0df
