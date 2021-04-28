@@ -36,7 +36,7 @@ Authorization: Token f118d69925e9fdbbf5caacdf0b7c08487741e0df
 
 ###
 
-GET http://localhost:8000/api/v1/posts/5/comments/
+GET http://localhost:8000/api/v1/posts/5/comments/3/
 
 ###
 

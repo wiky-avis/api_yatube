@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-from .models import Post
+from .models import Comment, Post
 from .permissions import IsOwnerOrReadOnly
 from .serializers import CommentSerializer, PostSerializer
 
